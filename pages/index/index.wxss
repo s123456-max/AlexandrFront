@@ -1,0 +1,39 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+ 
+.show {
+  display: none;
+  margin-left: -13px;
+  position: absolute;
+  top: 6px;
+  left: 75px;
+  width: 221px;
+  height: 422px;
+  padding: 8px;
+  border: 8px solid #e8e9f7;
+  background-color: white;
+  z-index:9999;
+  overflow: auto;
+}
+.txt{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: royalblue
+}
