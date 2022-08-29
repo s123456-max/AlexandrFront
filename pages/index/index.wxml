@@ -1,15 +1,16 @@
 <video id="myVideo" src="{{url}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls  style="margin:10px 62px;height:450px;width:253px"></video>
 <button bindtap="bindPlay" class="page-body-button" style="margin: 10px 10px 10px 120px" size="mini">播放</button>
 <button bindtap="bindPause" class="page-body-button" style="margin: 10px" size="mini">暂停</button>
-<button bindtap="load" class="page-body-button" type="primary">{{download}}</button>
+<button bindtap="load" class="page-body-button" style="background-color:#ffff99;color:#00ffff">{{download}}</button>
 <image bindtap="download" src="../../img/download.png" style="position:absolute;top:420px;right:10px;width:38px;height:40px"></image>
+<image bindtap="comment" src="../../img/comment.png" style="position:absolute;top:360px;right:10px;width:38px;height:40px"></image>
 <image wx:if="{{page-1}}" bindtap="before" src="../../img/before.png" style="position:absolute;top:200px;left:10px;width:40px;height:40px"></image>
 <image wx:if="{{page!=num}}" bindtap="after" src="../../img/after.png" style="position:absolute;top:200px;right:10px;width:40px;height:40px"></image>
 <view wx:if="{{url==''}}">
 <view class="bg" style='display:block'></view>
 <view class="show" style='display:block'>
-<view class='txt' style="margin-top:190px;margin-left:5px">AlexandrMisko即将为您呈现......</view>
-<view class='txt' style="margin-top:190px;margin-left:35px;color:orange">请点击下方的下载按钮</view>
+<view class='txt' style="margin-top:190px;margin-left:5px">{{title}}</view>
+<view wx:if="{{title=='AlexandrMisko即将为您呈现......'}}" class='txt' style="margin-top:190px;margin-left:35px;color:orange">请点击下方的下载按钮</view>
 </view>
 </view>
 

@@ -1,0 +1,24 @@
+.comment{
+  margin-left: 10px;
+  margin-bottom:10px;
+  margin-right: 10px;
+  border: 2rpx solid orange;
+  padding-left: 5px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+.caption{
+  margin-left: 10px;
+  margin-bottom:10px;
+  margin-right: 10px;
+  border: 2rpx solid rgb(0, 204, 255);
+  padding-left: 5px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+.apart{
+  text-align: center;
+  color: orange;
+  font-size: 20px;
+  margin-bottom: 8px;
+}

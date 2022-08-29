@@ -3,7 +3,10 @@ Page({
     download: '下载',
     url: ``,
     num: 0,
-    page: 1
+    page: 1,
+    id: '',
+    caption: '',
+    title: 'AlexandrMisko即将为您呈现......'
   },
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
@@ -14,12 +17,15 @@ Page({
     })
     var that = this
     wx.request({
-      url: 'http://192.168.1.4:5000/',
+      url: 'http://127.0.0.1:5000/video',
       success:(res)=>{
         const fs = wx.getFileSystemManager()
         console.log(res)
         that.setData({
-          num: res['data']['data'].length
+          num: res['data']['data'].length,
+          id: res['data']['data'][that.data.page-1]['id'],
+          caption: res['data']['data'][that.data.page-1]['caption'],
+          title: res['data']['data'][that.data.page-1]['title']
         })
         fs.writeFile({
           filePath: `${wx.env.USER_DATA_PATH}/py.mp4`,
@@ -48,13 +54,15 @@ Page({
   before(){
     this.setData({
       url: '',
-      page: this.data.page-1
+      page: this.data.page-1,
+      title: 'AlexandrMisko即将为您呈现......'
     })
   },
   after(){
     this.setData({
       url: '',
-      page: this.data.page+1
+      page: this.data.page+1,
+      title: 'AlexandrMisko即将为您呈现......',
     })
   },
   download(){
@@ -63,6 +71,11 @@ Page({
       success (res) {
         console.log(res.errMsg)
       }
+    })
+  },
+  comment(){
+    wx.navigateTo({
+      url: '../comment/comment?id='+this.data.id+'&caption='+this.data.caption,
     })
   }
 })
